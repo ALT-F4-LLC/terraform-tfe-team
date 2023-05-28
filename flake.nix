@@ -45,8 +45,9 @@
 
         devShells = {
           default = pkgs.mkShell {
-            inputsFrom = [
-              self'.packages.default
+            buildInputs = with pkgs; [
+              terraform
+              terraform-docs
             ];
           };
         };
