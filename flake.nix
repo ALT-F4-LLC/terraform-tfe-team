@@ -16,6 +16,10 @@
             src = ./.;
             version = "0.1.0";
 
+            buildInputs = with pkgs; [
+              terraform-docs
+            ];
+
             configurePhase = ''
               ${pkgs.terraform}/bin/terraform init \
                 -plugin-dir "${self'.packages.terraform-provider-tfe}/libexec/terraform-providers"
